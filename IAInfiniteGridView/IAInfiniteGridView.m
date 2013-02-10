@@ -10,7 +10,6 @@
 
 @interface IAInfiniteGridView()
 
-@property (nonatomic) NSInteger currentIndex;
 @property (strong, nonatomic) NSMutableArray *visibleGrids;
 @property (strong, nonatomic) NSMutableArray *gridReusableQueue;
 @property (strong, nonatomic) UIView *containerView;

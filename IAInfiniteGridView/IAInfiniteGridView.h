@@ -30,9 +30,11 @@
 @property (nonatomic, getter = isPaging) BOOL paging;
 @property (nonatomic, assign) IBOutlet id<IAInfiniteGridDataSource> dataSource;
 @property (nonatomic, assign) IBOutlet id<IAInfiniteGridDelegate> gridDelegate;
+@property (nonatomic) NSInteger currentIndex;
 
 - (id)dequeueReusableGrid;
 - (void)jumpToIndex:(NSInteger)gridIndex;
 - (UIView *)gridViewAtPoint:(CGPoint)point;
+- (NSInteger)currentIndex;
 
 @end
