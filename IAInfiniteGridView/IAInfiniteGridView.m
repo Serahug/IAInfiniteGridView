@@ -52,7 +52,20 @@
     return self;
 }
 
+- (void)willMoveToSuperview:(UIView *)newSuperview {
+    [super willMoveToSuperview:newSuperview];
+
+    if (newSuperview != nil) {
+        [self load];
+    }
+}
+
 - (void)awakeFromNib {
+    [super awakeFromNib];
+    [self load];
+}
+
+- (void)load {
     CGSize gridSize = [self.dataSource infiniteGridSize];
     NSUInteger totalGrids = [self.dataSource numberOfInfiniteGrids];
     self.contentSize = CGSizeMake(5 * totalGrids * gridSize.width, gridSize.height);
