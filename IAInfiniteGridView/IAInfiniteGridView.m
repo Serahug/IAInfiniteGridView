@@ -277,6 +277,17 @@
             [UIView animateWithDuration:.15 delay:0.0 options:UIViewAnimationOptionCurveEaseOut animations:^{scrollView.contentOffset = destinationPoint;} completion:nil];
         }
     }
+    
+    if (self.gridDelegate && [self.gridDelegate respondsToSelector:@selector(gridScrollViewDidEndDragging)]) {
+        [self.gridDelegate performSelector:@selector(gridScrollViewDidEndDragging)];
+    }
+}
+
+- (void)scrollViewWillBeginDragging:(UIScrollView *)scrollView
+{
+    if (self.gridDelegate && [self.gridDelegate respondsToSelector:@selector(gridScrollViewWillBeginDragging)]) {
+        [self.gridDelegate performSelector:@selector(gridScrollViewWillBeginDragging)];
+    }
 }
 
 @end

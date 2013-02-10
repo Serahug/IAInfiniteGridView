@@ -22,6 +22,10 @@
 
 - (void)infiniteGridView:(IAInfiniteGridView *)gridView didSelectGridAtIndex:(NSInteger)gridIndex;
 
+@optional
+- (void)gridScrollViewWillBeginDragging;
+- (void)gridScrollViewDidEndDragging;
+
 @end
 
 @interface IAInfiniteGridView : UIScrollView <UIScrollViewDelegate>
